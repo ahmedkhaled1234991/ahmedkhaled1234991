@@ -5,6 +5,10 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch: # يتيح لك تشغيله يدوياً في أي وقت
 
+# تمنح هذه الصلاحيات الـ Action القدرة على قراءة البيانات وحفظ الصور في المستودع
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,9 +18,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate SVG Cards
-        uses: vn7n24fzkq/github-profile-summary-cards@v2.3.2
+        uses: vn7n24fzkq/github-profile-summary-cards@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ahmedkhaled1234991
-          THEME: radial # يمكنك كتابة dark أو radial حسب رغبتك في الألوان
+          THEME: dark
