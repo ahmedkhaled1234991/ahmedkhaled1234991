@@ -53,7 +53,7 @@
 ## 📊 لغات التطوير الأكثر استخداماً | Top Languages
 
 <p align="center">
-  <img src="https://github.com/ahmedkhaled1234991/ahmedkhaled1234991/blob/main/github-profile-summary-cards/cards/most-commit-language.svg" alt="Top Languages" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ahmedkhaled1234991&layout=compact&theme=dark&hide_border=true" alt="Top Languages" />
 </p>
 
 ---
