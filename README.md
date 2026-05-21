@@ -1,7 +1,7 @@
 # مرحبًا بك في مساحتي البرمجية | 👋 Welcome to my Space
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ahmedkhaled1234991&show_icons=true&theme=radial&hide_border=true" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ahmedkhaled1234991&theme=radial&hide_border=true" alt="GitHub Streak Stats" />
 </p>
 
 ---
@@ -53,7 +53,7 @@
 ## 📊 لغات التطوير الأكثر استخداماً | Top Languages
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ahmedkhaled1234991&layout=compact&theme=radial&hide_border=true" alt="Top Languages" />
+  <img src="https://github.com/ahmedkhaled1234991/ahmedkhaled1234991/blob/main/github-profile-summary-cards/cards/most-commit-language.svg" alt="Top Languages" />
 </p>
 
 ---
