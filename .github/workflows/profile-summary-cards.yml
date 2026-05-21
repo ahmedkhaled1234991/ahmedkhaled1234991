@@ -1,0 +1,22 @@
+name: GitHub Profile Summary Cards
+
+on:
+  schedule: # يعمل تلقائياً كل 24 ساعة
+    - cron: "0 0 * * *"
+  workflow_dispatch: # يتيح لك تشغيله يدوياً في أي وقت
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate GitHub Cards
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Generate SVG Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@v2.3.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ahmedkhaled1234991
+          THEME: radial # يمكنك كتابة dark أو radial حسب رغبتك في الألوان
