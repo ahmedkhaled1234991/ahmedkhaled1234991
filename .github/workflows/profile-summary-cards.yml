@@ -2,8 +2,8 @@ name: GitHub Profile Language Stats
 
 on:
   schedule:
-    - cron: "0 0 * * *" # يعمل تلقائياً كل يوم
-  workflow_dispatch: # يتيح لك التشغيل اليدوي فوراً
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -22,10 +22,12 @@ jobs:
           user: ahmedkhaled1234991
           template: classic
           base: ""
+          # تفعيل الملحق البرمجي لتحليل اللغات بناءً على النشاط والمساهمات
           plugin_languages: yes
           plugin_languages_ignored: html, css
           plugin_languages_details: bytes-size, percentage
+          # التعديل الهندسي: حساب اللغات بناءً على الـ Commits (المساهمات الحقيقية) وليس حجم الـ Repos الحالية فقط
+          plugin_languages_mode: data 
+          # السماح بقراءة البيانات الإحصائية من المستودعات التابعة لمنظمات أو المستودعات الخاصة المتاح مساهمتك بها علنياً
+          plugin_languages_limit: 8
           filename: github-languages.svg
-
-      - name: Verify Generated Files
-        run: ls -la
