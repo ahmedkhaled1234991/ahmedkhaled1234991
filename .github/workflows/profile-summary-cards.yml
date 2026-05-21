@@ -1,26 +1,31 @@
-name: GitHub Profile Summary Cards
+name: GitHub Profile Language Stats
 
 on:
-  schedule: # يعمل تلقائياً كل 24 ساعة
-    - cron: "0 0 * * *"
-  workflow_dispatch: # يتيح لك تشغيله يدوياً في أي وقت
+  schedule:
+    - cron: "0 0 * * *" # يعمل تلقائياً كل يوم
+  workflow_dispatch: # يتيح لك التشغيل اليدوي فوراً
 
-# تمنح هذه الصلاحيات الـ Action القدرة على قراءة البيانات وحفظ الصور في المستودع
 permissions:
   contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Generate GitHub Cards
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Generate SVG Cards
-        uses: vn7n24fzkq/github-profile-summary-cards@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate Language Metrics
+        uses: lowlighter/metrics@latest
         with:
-          USERNAME: ahmedkhaled1234991
-          THEME: dark
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: ahmedkhaled1234991
+          template: classic
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css
+          plugin_languages_details: bytes-size, percentage
+          filename: github-languages.svg
+
+      - name: Verify Generated Files
+        run: ls -la
